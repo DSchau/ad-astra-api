@@ -1,6 +1,7 @@
 import { DecoratorBase, Elysia } from 'elysia'
 
-import { cache, INGEST_CACHE_KEY } from '../lib/cache'
+import { cache, clear, INGEST_CACHE_KEY } from '../lib/cache'
+import { onlyPostman } from '../lib/only-postman'
 
 const router = (app: Elysia<string, DecoratorBase>) => {
   return app
@@ -12,6 +13,14 @@ const router = (app: Elysia<string, DecoratorBase>) => {
         message: error.toString()
       }
     })
+    .post('/clear', async ({ body }) => {
+      clear()
+
+      return {
+        code: 200,
+        message: 'Successfully cleared cache'
+      }
+    }, { beforeHandle: onlyPostman })
     .post('/ingest', async ({ body }) => {
       const { key, value } = body as any
 
@@ -36,7 +45,7 @@ const router = (app: Elysia<string, DecoratorBase>) => {
           stack: e.stack
         }
       }
-    })
+    }, { beforeHandle: onlyPostman })
 }
 
 export { router }

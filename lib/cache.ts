@@ -16,3 +16,7 @@ export const getAll = () => {
 
   return all
 }
+
+export const clear = () => {
+  memoryCache.clear()
+}
