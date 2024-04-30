@@ -23,11 +23,11 @@ const router = (app: Elysia<string, DecoratorBase>) => {
         message: `Hello ${params.id}`
       };
     })
-    .get('/prompt', async ({ query: queryParams, headers }) => {
+    .get('/prompt', async ({ query: queryParams, request }) => {
       try {
         const { query } = queryParams
 
-        const token = headers['Postman-Token']
+        const token = request.headers.get('Postman-Token')
         if (!token) {
           throw new Error('Only works with Postman!')
         }
