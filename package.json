@@ -1,0 +1,43 @@
+{
+  "name": "protocols-example",
+  "version": "1.0.0",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch run index.ts",
+    "format": "prettier --write '**/*.{ts,tsx}'",
+    "start": "bun run index.ts"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "prettier": "^3.0.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^0.7.1",
+    "@elysiajs/graphql-yoga": "^0.7.0",
+    "@elysiajs/html": "^0.7.3",
+    "@elysiajs/swagger": "^0.7.3",
+    "@elysiajs/trpc": "^0.7.0",
+    "@graphql-yoga/render-graphiql": "^5.0.0",
+    "@ngneat/falso": "^7.1.1",
+    "@pathfinder-ide/react": "^0.2.6",
+    "@stricjs/router": "^5.0.3",
+    "@stricjs/utils": "^1.5.7",
+    "@trpc/client": "^10.40.0",
+    "@trpc/server": "^10.40.0",
+    "elysia": "^0.7.17",
+    "file-system-cache": "^2.4.4",
+    "graphql": "^16.8.1",
+    "graphql-scalars": "^1.22.4",
+    "graphql-yoga": "^5.0.0",
+    "node-cache": "^5.1.2",
+    "object-hash": "^3.0.0",
+    "octokit": "^3.1.1",
+    "openai": "^4.19.0",
+    "xml2js": "^0.6.2",
+    "zod": "^3.22.4"
+  }
+}
